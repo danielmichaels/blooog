@@ -1,0 +1,25 @@
+{% extends 'base_template/base.html' %}
+
+{% block content %}
+
+    {% for entry in entries %}
+        <h1><strong>
+            <a href="{{ url_for('blog.post', id=entry.id, slug=entry.slug) }}">{{ entry.title | title }}</a>
+        </strong>
+        </h1>
+        <p class="lead">
+        </p>
+        <p> On {{ moment(entry.timestamp).format('HH:mm, D MMM YYYY') }}</p>
+        <hr>
+        <p>{{ entry.content| truncate(1000,False)| markdown }}</p>
+        <p><a href="{{ url_for('blog.post', id=entry.id, slug=entry.slug) }}">Read More..</a></p>
+    {% else %}
+        <hr>
+        <p><strong>Sorry, Nothing matches that query...</strong></p>
+    {% endfor %}
+
+{% endblock %}
+
+{% block page %}
+{#{{ super() }}#}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base_template/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 404 Encountered</title>
+</head>
+<body>
+<p>Something went wrong!
+    to return <a href="{{ url_for('blog.home' }}">Home</a> .. </p>
+</body>
+</html>
+{% block page %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base_template/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{#{% extends 'blog/index.html' %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>{{ Title }}</title>
+</head>
+
+<body>
+{%  block content %}
+
+    <div class="container">
+    <dl>
+        <div style="width: 60%">
+        {{ wtf.quick_form(form) }}
+            {{ form.csrf_token }}
+        </div>
+    </dl>
+    </div>
+
+</form>
+{%  endblock %}
+</body>
+</html>
+{% block page %}
+{% endblock %}
